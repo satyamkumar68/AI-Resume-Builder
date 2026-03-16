@@ -1,0 +1,43 @@
+services:
+  # Node.js Backend API
+  - type: web
+    name: ai-resume-backend
+    env: node
+    buildCommand: yarn install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://ai-resume-frontend.onrender.com
+
+  # Python AI Engine
+  - type: web
+    name: ai-resume-nlp
+    env: docker
+    dockerfilePath: ./ai-engine/Dockerfile
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: API_KEY
+        generateValue: true # API secret key shared between Node backend and Python ML service
+
+  # React Frontend (Optional, Vercel is often better for React, but included here for full monorepo setup)
+  - type: web
+    name: ai-resume-frontend
+    env: static
+    buildCommand: yarn install && yarn build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_NODE_API_URL
+        value: https://ai-resume-backend.onrender.com/api
+      - key: REACT_APP_PYTHON_API_URL
+        value: https://ai-resume-nlp.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

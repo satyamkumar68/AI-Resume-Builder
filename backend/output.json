@@ -1,0 +1,106 @@
+[
+  {
+    "_id": "699af6f18c15d6b53dce6b20",
+    "user": "6999396a8dadd0bedeaf0677",
+    "title": "Prebuilt PDF - 2/22/2026",
+    "content": {
+      "contact": {
+        "phone": "555-0999",
+        "linkedin": "linkedin.com/in/user",
+        "portfolio": "user.dev"
+      },
+      "summary": "Experienced professional imported from a prebuilt PDF resume.",
+      "experience": [
+        {
+          "company": "Enterprise Corp",
+          "role": "Lead Engineer",
+          "startDate": "2018-01",
+          "endDate": "Present",
+          "description": "Led backend architecture.\nScaled database to millions of users.",
+          "_id": "699af6f18c15d6b53dce6b21"
+        }
+      ],
+      "education": [
+        {
+          "institution": "Tech University",
+          "degree": "M.S. Computer Science",
+          "year": "2016 - 2018",
+          "_id": "699af6f18c15d6b53dce6b22"
+        }
+      ],
+      "skills": [
+        "Python",
+        "AWS",
+        "SQL",
+        "Docker"
+      ],
+      "projects": [
+        {
+          "title": "Data Pipeline",
+          "link": "github.com/user/pipeline",
+          "description": "Built a real-time data streaming pipeline.",
+          "_id": "699af6f18c15d6b53dce6b23"
+        }
+      ]
+    },
+    "analysisAnalysis": {
+      "score": 0,
+      "missingKeywords": []
+    },
+    "createdAt": "2026-02-22T12:30:41.358Z",
+    "updatedAt": "2026-02-22T12:30:41.358Z",
+    "__v": 0
+  },
+  {
+    "_id": "699af6e08c15d6b53dce6b03",
+    "user": "6999396a8dadd0bedeaf0677",
+    "title": "Prebuilt PDF - 2/22/2026",
+    "content": {
+      "contact": {
+        "phone": "555-0999",
+        "linkedin": "linkedin.com/in/user",
+        "portfolio": "user.dev"
+      },
+      "summary": "Experienced professional imported from a prebuilt PDF resume.",
+      "experience": [
+        {
+          "company": "Enterprise Corp",
+          "role": "Lead Engineer",
+          "startDate": "2018-01",
+          "endDate": "Present",
+          "description": "Led backend architecture.\nScaled database to millions of users.",
+          "_id": "699af6e08c15d6b53dce6b04"
+        }
+      ],
+      "education": [
+        {
+          "institution": "Tech University",
+          "degree": "M.S. Computer Science",
+          "year": "2016 - 2018",
+          "_id": "699af6e08c15d6b53dce6b05"
+        }
+      ],
+      "skills": [
+        "Python",
+        "AWS",
+        "SQL",
+        "Docker"
+      ],
+      "projects": [
+        {
+          "title": "Data Pipeline",
+          "link": "github.com/user/pipeline",
+          "description": "Built a real-time data streaming pipeline.",
+          "_id": "699af6e08c15d6b53dce6b06"
+        }
+      ]
+    },
+    "analysisAnalysis": {
+      "score": 0,
+      "missingKeywords": []
+    },
+    "createdAt": "2026-02-22T12:30:24.623Z",
+    "updatedAt": "2026-02-22T12:30:24.623Z",
+    "__v": 0
+  }
+]

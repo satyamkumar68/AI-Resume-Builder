@@ -1,0 +1,13 @@
+@echo off
+echo Starting AI Resume Platform...
+
+echo Starting Node.js Backend...
+start cmd /k "cd backend && npm start"
+
+echo Starting React Frontend...
+start cmd /k "cd frontend && npm start"
+
+echo Starting Python AI Engine...
+start cmd /k "cd ai-engine && .\venv\Scripts\python -m uvicorn main:app"
+
+echo All services are starting up!

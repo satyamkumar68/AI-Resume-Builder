@@ -3,7 +3,8 @@ services:
   - type: web
     name: ai-resume-backend
     env: node
-    buildCommand: yarn install
+    rootDir: backend
+    buildCommand: npm install
     startCommand: node server.js
     envVars:
       - key: PORT
@@ -12,31 +13,45 @@ services:
         sync: false
       - key: JWT_SECRET
         generateValue: true
+      - key: AI_SERVICE_URL
+        value: https://ai-resume-nlp.onrender.com
       - key: FRONTEND_URL
         value: https://ai-resume-frontend.onrender.com
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
 
-  # Python AI Engine
+  # Python AI Engine (FastAPI + Groq LLM)
   - type: web
     name: ai-resume-nlp
     env: docker
     dockerfilePath: ./ai-engine/Dockerfile
+    dockerContext: ./ai-engine
     envVars:
-      - key: GEMINI_API_KEY
+      - key: GROQ_API_KEY
         sync: false
       - key: API_KEY
-        generateValue: true # API secret key shared between Node backend and Python ML service
+        generateValue: true
+      - key: PORT
+        value: 8080
 
-  # React Frontend (Optional, Vercel is often better for React, but included here for full monorepo setup)
+  # React Frontend
   - type: web
     name: ai-resume-frontend
     env: static
-    buildCommand: yarn install && yarn build
+    rootDir: frontend
+    buildCommand: npm install && npm run build
     staticPublishPath: ./build
     envVars:
       - key: REACT_APP_NODE_API_URL
         value: https://ai-resume-backend.onrender.com/api
-      - key: REACT_APP_PYTHON_API_URL
+      - key: REACT_APP_AI_API_URL
         value: https://ai-resume-nlp.onrender.com
+      - key: REACT_APP_AI_API_KEY
+        sync: false
     routes:
       - type: rewrite
         source: /*
